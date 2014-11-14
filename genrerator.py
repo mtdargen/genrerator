@@ -1,11 +1,11 @@
-__author__ = "Matt Dargen, PHD"
-__PHD__ = "Punk Hardcore Drugdealer"
+__author__ = "Matt Dargen"
 
 import random
 
 def main():
 
-    print("____-=/GENRERATOR\=-____")
+    print("___-=/GENRERATOR\=-___")
+    print("   by matt dargen ;)")
     while(True):
         try:
             input("press ENTER to Genrerate\n")
@@ -36,9 +36,9 @@ def genrerateHelper(calls, r):
     if type == 1:
         genre += newRandItem(1,r) + genrerateHelper(calls + 1, r)
     elif type == 2:
+        genre += newRandItem(1,r) + newRandItem(2,r)
+    elif type == 3:
         genre += newRandItem(2,r) + newRandItem(3,r)
-    else:
-        genre += newRandItem(2,r)
     return genre + "\033[0m"
 
 def newRandItem(state, r):
@@ -49,22 +49,22 @@ def newRandItem(state, r):
     elif state == 3:
         return r.choice(suffixes)
 
-adj = ["Post-","Dream ","Blues ","Electro-",
-            "Psyche-","Hard ","Harsh ","Soft ",
+adj = ["Post-","Dream ","Blues ","Electro-","Bossa ",
+            "Psyche-","Hard ","Harsh ","Soft ","Euro-",
             "Progressive ","Acid ","Chill ","Synth ","Space ","Indie ",
             "Horror ","Thrash ","Industrial ","Glam ","Jangle ","Art ",
-            "Pop-","Death ","Twee ","Math ","Surf ","Slacker ",
+            "Pop-","Death ","Twee ","Math ","Surf ","Slacker ","Wizard ",
             "Gypsy ","Neo-","Melodic ","Stoner ","Jazz-","G-","Political ",
-            "Gloom ","Witch ","Nu-","Shred ","Trill ","Sea ","Afro-",
+            "Gloom ","Witch ","Nu-","Shred ","Trill ","Sea ","Afro-","Based ",
             "Nerd ","Christian ","Freak ","Ambient ","Experimental ","Hardcore ",
             "Urban ","Adult ","Bro ","Alt-","Psycho-","Vapor "]
 
-noun = ["Noise","LoFi","Blues","Rock","Country","Collage","Doom","Trip",
-            "Rap","Dub","House","Crunk","IDM","Techno","Bass","Motown","Crust",
-            "Prog","Disco","Hardcore","Reggae","Punk","Metal","Folk","Beats",
+noun = ["Noise","LoFi","Blues","Rock","Country","Collage","Doom","Trip","Zydeco",
+            "Rap","Dub","House","Crunk","IDM","Techno","Bass","Motown","Crust","Bleep-Bloop",
+            "Prog","Disco","Hardcore","Reggae","Punk","Metal","Folk","Beats","Gospel",
             "Garage","Shoegaze","Pop","Grunge","Jazz","Funk","Hip Hop","Grime","Hyphy"]
 
-suffixes = ["core","tronica","wave","abilly","step","style","-bop","-hop"]
+suffixes = ["core","tronica","wave","abilly","step","style","-bop","-hop"," Nova"]
 
 messages = ["Pitchfork will not shut up about @",
             "Dude, I've been listening to so much @ lately",
@@ -86,7 +86,20 @@ messages = ["Pitchfork will not shut up about @",
             "# just released a @ album out of nowhere!  What?!!",
             "#'s new album kinda sounds like @, but with $ undertones, if that makes any sense.",
             "I can only listen to @ now.  Everything else bores me.",
-            "The new # release experiments with @ quite a bit"]
+            "The new # release experiments with @ quite a bit",
+            "Hipster Runoff keeps talking about @ and I can't tell if it's a joke",
+            "My friends are all into @ but personally I'm more of a $ type",
+            "My parents say that @ is the will of Satan.",
+            "Just found a bunch of @ in my parents' record collection??",
+            "Most people think of # as the originator of @ music.",
+            "I can't believe you can hear @ in commercials now... it's officially mainstream :(",
+            "I like @ music but I HATE the fans.",
+            "It's so disrespectful how Miley Cyrus is appropriating @ music.",
+            "I like to put a lot of @ in the mix when I do public radio.",
+            "We don't have a name yet, but we know we wanna make some @ kinda music.",
+            "@ is too challenging for most listeners, I'd suggest starting out with $ and working from there.",
+            "Gonna watch this @ band at a house show tonight, wanna come?  It's BYOB.  Also sober.",
+            "@ is destroying music and corrupting the youth!"]
 
 artists = ["Klymaxxx","Huey Lewis & The News","Hall & Oates","George Michael",
             "Tupac","Toto","Yngwie Malmsteen","Aaron Carter","Destiny's Child",

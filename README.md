@@ -1,4 +1,4 @@
 genrerator
 ==========
 
-generate the genre of your next album using the magic of context free grammar
+Generate the genre of your major label debut with the amazing power of computer bits!

@@ -5,10 +5,11 @@ import random
 def main():
 
     print("___-=/GENRERATOR\=-___")
-    print("   by matt dargen ;)")
+    print("   by matt dargen ;)\n")
+    print("Press ENTER to Genrerate!\n")
     while(True):
         try:
-            input("press ENTER to Genrerate\n")
+            input()
         except:
             print(genrerate())
 
@@ -17,19 +18,25 @@ def genrerate():
     r = random.Random()
     message = r.choice(messages)
 
-    if "#" in message:
-        message = message.replace("#",r.choice(artists))
 
     message = message.replace("@", genrerateHelper(0,r))
-    message = message.replace("$", genrerateHelper(0,r))
 
-    return message + '\n'
+    if "$" in message:
+        message = message.replace("$", genrerateHelper(0,r))
+    if "#" in message:
+        message = message.replace("#",r.choice(artists))
+    if "*" in message:
+        message = message.replace("*",r.choice(places))
+
+    return message
 
 def genrerateHelper(calls, r):
     genre = "\033[4m"
 
     if(calls == 0):
         type = r.choice([1,2])
+    elif(calls == 3):
+        type = r.choice([2,3])
     else:
         type = r.choice([1,2,3])
 
@@ -49,26 +56,30 @@ def newRandItem(state, r):
     elif state == 3:
         return r.choice(suffixes)
 
-adj = ["Post-","Dream ","Blues ","Electro-","Bossa ",
-            "Psyche-","Hard ","Harsh ","Soft ","Euro-",
+adj = ["Post-","Dream ","Blues ","Electro-","Bossa ","Pseudo-",
+            "Psyche-","Hard ","Harsh ","Soft ","Euro-","New ","Cerebral ",
             "Progressive ","Acid ","Chill ","Synth ","Space ","Indie ",
             "Horror ","Thrash ","Industrial ","Glam ","Jangle ","Art ",
             "Pop-","Death ","Twee ","Math ","Surf ","Slacker ","Wizard ",
             "Gypsy ","Neo-","Melodic ","Stoner ","Jazz-","G-","Political ",
             "Gloom ","Witch ","Nu-","Shred ","Trill ","Sea ","Afro-","Based ",
-            "Nerd ","Christian ","Freak ","Ambient ","Experimental ","Hardcore ",
-            "Urban ","Adult ","Bro ","Alt-","Psycho-","Vapor "]
+            "Nerd ","Christian ","Freak ","Ambient ","Hardcore ","Traditional ",
+            "Urban ","Adult ","Bro ","Alt-","Psycho-","Vapor ","Digital ","Old-School "]
 
-noun = ["Noise","LoFi","Blues","Rock","Country","Collage","Doom","Trip","Zydeco",
-            "Rap","Dub","House","Crunk","IDM","Techno","Bass","Motown","Crust","Bleep-Bloop",
-            "Prog","Disco","Hardcore","Reggae","Punk","Metal","Folk","Beats","Gospel",
-            "Garage","Shoegaze","Pop","Grunge","Jazz","Funk","Hip Hop","Grime","Hyphy"]
+noun = ["Noise","Blues","Rock","Country","Collage","Doom","Trip","Zydeco",
+            "Bongo","Rap","Dub","House","Crunk","IDM","Techno","Bass","Motown",
+            "Crust","Bleep-Bloop","Prog","Disco","Hardcore","Reggae","Punk","Metal",
+            "Folk","Gospel","Banger","Garage","Shoegaze","Pop","Grunge","Worship",
+            "Jazz","Funk","Hip Hop","Grime","Hyphy","Classical"]
 
-suffixes = ["core","tronica","wave","abilly","step","style","-bop","-hop"," Nova"]
+suffixes = ["core","tronica","wave","abilly","step","style","-bop","-hop",
+            " Beats","-Fi"]
 
 messages = ["Pitchfork will not shut up about @",
             "Dude, I've been listening to so much @ lately",
-            "I found this rad blog about the @ scene in Atlanta",
+            "I found this rad blog about the @ scene in *",
+            "Have you heard of @?  It's blowing up in * right now.",
+            "I wanna move to * so I can be close to all the @ music.",
             "\m/ @ TIL I DIE \m/",
             "Nothing will help me understand @ music.",
             "God, my brother is one of those @ people now...",
@@ -99,11 +110,20 @@ messages = ["Pitchfork will not shut up about @",
             "We don't have a name yet, but we know we wanna make some @ kinda music.",
             "@ is too challenging for most listeners, I'd suggest starting out with $ and working from there.",
             "Gonna watch this @ band at a house show tonight, wanna come?  It's BYOB.  Also sober.",
-            "@ is destroying music and corrupting the youth!"]
+            "@ is destroying music and corrupting the youth!",
+            "How the fuck did # get booked at a @ festival?",
+            "People will remember the 2010's for its @ music.",
+            "Keep your #, I wanna listen to some @!",
+            "I live in * and there's nowhere to see a good @ show :(",
+            "Me and 13 other people like @ on Facebook."]
 
 artists = ["Klymaxxx","Huey Lewis & The News","Hall & Oates","George Michael",
             "Tupac","Toto","Yngwie Malmsteen","Aaron Carter","Destiny's Child",
-            "David Bowie","James Taylor","Bruce Springsteen","Engelbert Humperdink",
+            "James Taylor","Bruce Springsteen","Engelbert Humperdink",
             "Metallica","Oprah","Cheap Trick","The Divinyls","Death Grips"]
+
+places = ["Spokane","Atlanta","Toronto","New York","LA","Ethiopia","London","Sacto",
+            "Ukraine","Athens","Vancouver","Philly","Seattle","Brazil","Appalachia",
+            "Montreal","Berlin","Detroit"]
 
 main()

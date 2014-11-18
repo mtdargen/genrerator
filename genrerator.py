@@ -8,10 +8,8 @@ def main():
     print("   by matt dargen ;)\n")
     print("Press ENTER to Genrerate!\n")
     while(True):
-        try:
-            input()
-        except:
-            print(genrerate())
+        raw_input()
+        print(genrerate())
 
 
 def genrerate():
